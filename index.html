@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Energy</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script type="text/javascript">
+        document.addEventListener("submit", sendEmail);
+        function sendEmail(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                url: "http://127.0.0.1:8000/",
+                data: JSON.stringify({
+                    "name": document.forms["myForm"]["name"].value,
+                    "email": document.forms["myForm"]["email"].value,
+                    "message": document.forms["myForm"]["message"].value,
+                }),
+                success: function (data) {
+                    if (data.code && data.code == 200) {
+                        document.forms["myForm"].reset()
+                        alert(data.message)
+                    }
+                },
+                error: function (data) {
+                    console.log("error ", data.error);
+                },
+                dataType: "json"
+            });
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="team.html">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="solutions.html">Solutions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#index.html/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="banner home">
+        <div class="banner_visual" style="background-image: url('./images/banner-home.png');">
+            <div class="container">
+                <h1>Join the Solar Energy Revolution</h1>
+                <a href="coming-soon.html" class="btn_border_white">Download Whitepaper</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="about_us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 title mb-5 mb-lg-0">
+                    Welcome to Sunset Capital
+                </div>
+
+                <div class="col-lg-6 offset-lg-1">
+                    <h2 class="dark_green">About Us</h2>
+                    <p>It allows individuals to combine forces to invest in the green energy sector that has traditionally been preserved by financial institutions and ultra-high net worth individuals and corporations.
+                    </p>
+                    <p>The decline in costs of solar, wind and also green hydrogen generation, along with the electrification of the energy system, make the development of renewable energy resources increasingly attractive for society, and a lucrative investment opportunity. (same text 2times)
+                    </p>
+                    <p>We are committed to introducing the world to an innovative blockchain solution designed for the green energy sector. We are ideally positioned to work to accelerate the transition towards a carbon-neutral economy, through emerging technologies and more environmentally friendly solutions, targeting off-grid areas and many industries from many hard-to-abate carbon sectors.
+                    </p>
+                    <div class="text-right">
+                        <a href="about-us.html">read more...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="key_points">
+        <div class="container">
+            <h2 class="dark_green">Key Points</h2>
+            <div class="row">
+                <div class="col-lg-6 points">
+                    <span>1</span>
+                    Sunset Capital tokens will be lodged in Switzerland, following Swiss Financial Market Supervisory
+                    Authority FINMA regulation.
+                </div>
+                <div class="col-lg-6 points">
+                    <span>2</span>
+                    Maerki Baumann bank will work as a safekeeping of the tokens at their crypto vault and also will
+                    custody the investors money, following the project disbursement schedule.
+                </div>
+                <div class="col-lg-6 points">
+                    <span>3</span>
+                    Smart Contracts will rule the profit distribution, in order to secure the entire Sunset Capital
+                    Blockchain Platform operation.
+                </div>
+                <div class="col-lg-6 points">
+                    <span>4</span>
+                    BDO will audit the financial statements (Audit & Assurance Services | BDO Audit & Assurance)
+                </div>
+                <div class="col-lg-6 points">
+                    <span>5</span>
+                    DNV-GL will certify the energy production rate (Power and renewables - DNV GL)
+                </div>
+                <div class="col-lg-6 points">
+                    <span>6</span>
+                    SUMSUB will verify KYC/AML (KYC AML and Identity Verification)
+                </div>
+                <div class="col-lg-6 points">
+                    <span>7</span>
+                    Sunset Capital, will be the first emerging technology company to tokenize Green Energy assets and to
+                    work with Green Hydrogen in Brazil
+                </div>
+                <div class="col-lg-6 points">
+                    <span>8</span>
+                    The energy complex was designed to be flexible, in a way that we can use the green hydrogen as a
+                    battery to power or stabilize the grid and as a green H2 gas supplier, changing the configuration in
+                    a very short time.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project_highlights">
+        <div class="container">
+            <h2 class="dark_green text-center">Project Highlights</h2>
+            <p class="sub_content">We are ideally positioned to work to accelerate the transition towards a
+                carbon-neutral economy, through
+                emerging technologies and more environmentally friendly solutions, targeting off-grid areas and many
+                industries from many hard-to-abate carbon sectors.</p>
+            <div class="mx_width">
+                <div class="row">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="visual mr-0 mr-lg-5 text-center">
+                            <img class="img-fluid" src="./images/energy-projects.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 h_center">
+                        <h2 class="dark_green small mb-4">Renewable Energy Project Specs</h2>
+                        <ul class="custom_list">
+                            <li>41 MW of Renewable Energy Installed Capacity (01 Mixed Wind & Solar Power Plant and 07
+                                Solar Power Plant)
+                            </li>
+                            <li>02 Green Hydrogen Plant production capacity of up to 250,000 kg/year of green H2.</li>
+                            <li>02 Datacenters</li>
+                        </ul>
+                        <p>The utility tokens that are fully backed up by theinstalled capacity of the power plant as
+                            measured in deliverable KWs over the plant lifetime.</p>
+                        <p>The utility tokens will be issued for each watt and holders will be entitled to the profits
+                            from
+                            the plant for the expected 20 years lifetime.</p>
+                    </div>
+                </div>
+            </div>
+            <h2 class="dark_green small text-center mt-0 mt-lg-5 pt-4">Description of the Projects</h2>
+            <div class="row">
+                <div class="col-lg-4  mb-5 mb-lg-0">
+                    <div class="project_bx">
+                        <div class="visual">
+                            <img class="img-fluid" src="./images/project1.jpg" alt="">
+                        </div>
+                        <h3>Renewable Energy Power Plant Sunset 1 </h3>
+                        <p>6,3 MW Power Plant Complex (Solar & Wind Generation) </p>
+                        <span>Location: Santa Catarina, Brazil </span>
+                    </div>
+                </div>
+                <div class="col-lg-4  mb-5 mb-lg-0">
+                    <div class="project_bx">
+                        <div class="visual">
+                            <img class="img-fluid" src="./images/project2.jpg" alt="">
+                        </div>
+                        <h3>Renewable Energy Power Plant Sunset 2</h3>
+                        <p>01 Green Hydrogen Facility<br>
+                            01 Datacenter
+                        </p>
+                        <span>Location: Espírito Santo, Brazil </span>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="project_bx">
+                        <div class="visual">
+                            <img class="img-fluid" src="./images/project3.jpg" alt="">
+                        </div>
+                        <h3>Renewable Energy Laguna Complex - 25 MW Power Plant (Solar Generation) </h3>
+                        <p>01 Green Hydrogen Facility<br>
+                            01 Datacenter
+                        </p>
+                        <span>Location: Santa Catarina, Brazil </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="bg_light_green end_users">
+        <div class="container">
+            <div class="mw_1200">
+                <h2 class="dark_green">Target areas will be end users such as</h2>
+                <div class="row">
+                    <div class="col-lg-4 end_users_bx">
+                        <div class="icon">
+                            <img src="./images/icon-check-green.png" alt="">
+                        </div>
+                        <p>Corporations with carbon-neutral and green energy policies</p>
+                    </div>
+                    <div class="col-lg-4 end_users_bx">
+                        <div class="icon">
+                            <img src="./images/icon-check-green.png" alt="">
+                        </div>
+                        <p>Industries from many hard-to-abate carbon sectors.</p>
+                    </div>
+                    <div class="col-lg-4 end_users_bx">
+                        <div class="icon">
+                            <img src="./images/icon-check-green.png" alt="">
+                        </div>
+                        <p>Sustainable Organizations.</p>
+                    </div>
+                </div>
+                <div class="end_users_content">Our Portfolio could be a very interesting asset for Green Energy
+                    Investment Funds and
+                    for Corporations from many hard-to-abate carbon sectors (Oil & Gas, Mining & Steel Companies,
+                    Chemical Industries…) compromised to achieve the Paris Agreement UNFCCC on climate change.</div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="flowchart">
+        <div class="container text-center">
+
+            <div id="myCarousel" class="carousel slide" data-interval="false">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li class="item1 active"></li>
+                    <li class="item2"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <h2 class="dark_green">Energy Flowchart Configuration 1</h2>
+                        <img class="img-fluid" src="./images/flowchart1.png" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <h2 class="dark_green">Energy Flowchart Configuration 2</h2>
+                        <img class="img-fluid" src="./images/flowchart2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+    </section>
+
+    <section class="our_team">
+        <div class="container text-center">
+            <h2 class="dark_green">Our Amazing Team</h2>
+            <div class="row">
+                <div class="col-lg-3 team_bx">
+                    <a href="team.html">
+                        <div class="visual">
+                            <img class="img-fluid" src="./images/avtar.jpg" alt="">
+                        </div>
+                        <h3>Rodrigo Buaiz Boabaid</h3>
+                        <p>CEO</p>
+                    </a>
+                </div>
+                <div class="col-lg-3 team_bx">
+                    <a href="team.html">
+                        <div class="visual">
+                            <img class="img-fluid" src="./images/avtar.jpg" alt="">
+                        </div>
+                        <h3>Miguel Boabaid Neto</h3>
+                        <p>CTO</p>
+                    </a>
+                </div>
+                <div class="col-lg-3 team_bx">
+                    <a href="team.html">
+                        <div class="visual">
+                            <img class="img-fluid" src="./images/avtar.jpg" alt="">
+                        </div>
+                        <h3>Liu Ming</h3>
+                        <p>Renewable Energy Consultant</p>
+                    </a>
+                </div>
+                <div class="col-lg-3 team_bx">
+                    <a href="team.html">
+                        <div class="visual">
+                            <img class="img-fluid" src="./images/avtar.jpg" alt="">
+                        </div>
+                        <h3>Gabriel Claudino Simões</h3>
+                        <p>Renewable Energy Consultant</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="latest_news">
+        <div class="container">
+            <h2 class="dark_green">Our Latest News</h2>
+
+            <div class="row">
+                <div class="col-lg-5 latest_news_bx">
+                    <div class="visual">
+                        <img class="img-fluid" src="./images/KiteKraft.jpg" alt="">
+                    </div>
+                    <div class="latest_news_bx_content">
+                        <h3>Flying Wind Turbines</h3>
+                        <div class="latest_news_bx_sub_content">
+                            <p>Sunset Capital signs an Memorandum of Understanding with kiteKRAFT GmbH
+                                (<a target="_blank" href="https://www.kitekraft.de/">www.kitekraft.de</a>), a
+                                preeminent German company pioneer on the development of Flying Wind Turbines. Sunset
+                                will
+                                install 2 Pilot Flying Wind Turbines  at Laguna Energy Complex located in Santa
+                                Catarina,
+                                Brazil. Signing with kiteKraft, Sunset reaffirm its commitment to use the greatest
+                                technologies related to green energy production in order to build the company future
+                                path.
+                            </p>
+                        </div>
+                        <a href="latest-news.html">Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1 latest_news_bx">
+                    <div class="visual">
+                        <img class="img-fluid" src="./images/news2.png" alt="">
+                    </div>
+                    <div class="latest_news_bx_content">
+
+                        <h3>Green Energy Plant </h3>
+                        <div class="latest_news_bx_sub_content">
+                            <p> Brazil will have it's first two Gren Hydrogen electrolysis plants to be built by Sunset
+                                Capital.
+                                Annual production will start with 250,000 kg/year of green hydrogen for each plant. Each
+                                Green H2 Plant have a production capacity of 725,000 kg/year of "green H2" and will be
+                                implemented in phases according to demand.
+                                 Total investment will be around USD 20 Million. The first Green H2 Plant is expected to
+                                go
+                                live in the first half of 2022 and the second in the last quarter of 2022.
+                                 </p>
+                        </div>
+                        <a href="latest-news.html">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a name="index.html/contact"></a>
+    <section class="container contact_us">
+        <div class="contact_us_content">
+            <!-- <form id="myForm"> -->
+            <form id="myForm" onsubmit="sendEmail()">
+                <h2>Contact Us</h2>
+                <div class="form-group">
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required />
+                    <!-- <p class="custom_error">Your name is required</p> -->
+                </div>
+                <div class="form-group">
+                    <input type="text" id="email" name="email" class="form-control" placeholder="Email" required />
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="message" name="message" placeholder="Message"
+                        required></textarea>
+                </div>
+                <div class="text-center mt-5">
+                    <button>Send</button>
+                </div>
+            </form>
+            <div class="contact_detail">
+                <h3>Contact Us</h3>
+                <h4>Please feel free to contact us anytime for any clarification:
+                </h4>
+                <p><b>Official email:</b> <a class="color_green_light ml-2" href="mailto:contact@sunsetcapital.io">contact@sunsetcapital.io</a> </p>
+                <p><b>Contact:</b> <br>+55 27 993091753<br />+55 27 997937856 </p>
+                <p><b>Address:</b> <br>Av. Nossa Senhora da Penha, 699, Sl 612, Century Towers Torre A, <br>
+                    Vitória/ES, Brazil<br>
+                    CEP: 29.056-245
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <div class="mw_1100">
+                <a href="index.html"><img class="img-fluid" src="./images/logo1.png" alt=""></a>
+                <p>Copyright © 2021 Solar Energy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Activate Carousel
+            $("#myCarousel").carousel();
+
+            // Enable Carousel Indicators
+            $(".item1").click(function () {
+                $("#myCarousel").carousel(0);
+            });
+            $(".item2").click(function () {
+                $("#myCarousel").carousel(1);
+            });
+
+            // Enable Carousel Controls
+            $(".carousel-control-prev").click(function () {
+                $("#myCarousel").carousel("prev");
+            });
+            $(".carousel-control-next").click(function () {
+                $("#myCarousel").carousel("next");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
